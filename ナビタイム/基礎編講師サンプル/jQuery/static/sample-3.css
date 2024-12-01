@@ -1,0 +1,38 @@
+body {
+    margin: 0;
+}
+.main {
+    padding: 16px;
+}
+.form {
+    display: flex;
+    align-items: center;
+    gap:  30px;
+}
+ul {
+    list-style: none;
+}
+li {
+    padding: 32px;
+}
+input {
+    width: 300px;
+    height: 50px;
+    padding: 0;
+    border: 1px solid #cde;
+    border-radius: 3px;
+    color: #000;
+    background-color: #fff;
+    outline-color: #cde;
+    outline-width: 0;
+}
+button {
+    width: 281px;
+    height: 52px;
+    border: none;
+    border-radius: 8px;
+    font-size: 23px;
+    color: #fff;
+    background-color: #006400;
+    cursor: pointer;
+}

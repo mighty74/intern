@@ -1,0 +1,83 @@
+/* 共通定義 */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* 地図 */
+#map {
+  background: #666;
+  height: 100vh;
+  /* height: 480px;*/
+  width: 100vw;
+  /*width: 720px; */
+}
+
+/* 検索ボックス */
+#serch_box {
+  position: absolute;
+  display: inline-block;
+  border-radius: 2%;
+  background: rgb(224, 247, 250);
+  height: 92vh;
+  width: 400px;
+  padding: 40px;
+  top: 25px;
+  left: 25px;
+  z-index: 2;
+  box-shadow: 0 5px 5px 0 rgba(0, 0, 0, .5);
+  overflow: hidden;
+}
+
+
+#search {
+  height: 40px;
+  width: 250px;
+  margin-bottom: 20px;
+}
+
+#search_button {
+  height: 40px;
+  width: 60px;
+}
+
+/* 検索結果ボックス */
+#result_box {
+  position: relative;
+  display: inline-block;
+  background: rgb(224, 247, 250);
+  height: calc(92vh - 160px);
+  width: 370px;
+  left: -15px;
+  z-index: 3;
+  overflow-y: scroll;
+}
+
+#result_box::-webkit-scrollbar {
+  display: none;
+}
+
+
+.card {
+  height: 150px;
+  width: 350px;
+  margin-bottom: 20px;
+  box-shadow: 0 3px 5px 0 rgba(0, 0, 0, .5);
+}
+
+.contain {
+  display: flex;
+  width: 340px;
+  margin: auto;
+}
+
+img {
+  display: block;
+}
+
+
+.contain_text {
+  display: block;
+  width: 170px;
+  margin: auto;
+}

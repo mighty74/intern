@@ -1,0 +1,15 @@
+/*
+薄い緑：#ddeadd
+濃い緑：#006400
+文字色：#4d4d4d
+*/
+
+/* TODO: CSS課題
+①index.cssをindex.htmlで読みこみ背景色が薄緑になることを確認しなさい。
+②見本と同じような見た目になるようにCSSをあてなさい
+
+*/
+
+body {
+    background-color: #ddeadd;
+}

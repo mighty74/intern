@@ -1,0 +1,31 @@
+body {
+    margin: 0;
+}
+
+.main {
+    padding: 16px 16px 32px;
+}
+
+.title {
+    text-align: center;
+}
+
+.sub-title {
+    width: 50%;
+    margin: 40px 0 20px 0;
+    border-bottom: 2px solid #006400;
+}
+
+.confirmation-list {
+    line-height: 3;
+}
+
+.debug-button {
+    margin: 16px;
+}
+
+.debug-box {
+    width: 100px;
+    background-color: lightcoral;
+    border-style: solid;
+}

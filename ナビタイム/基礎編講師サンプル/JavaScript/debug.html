@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8"/>
+        <title>デバッグ練習</title>
+        <link rel="stylesheet" href="./static/debug.css">
+    </head>
+    <body>
+        <main class="main">
+            <h1 class="title">デベロッパーツールの使い方</h1>
+            <h2 class="sub-title">デバッグ練習</h2>
+            <ol class="confirmation-list">
+                <li>画面上のどこかで右クリック</li>
+                <li>検証を選択</li>
+                <li>出てきた画面最上部のSourceをクリック</li>
+                <li>左側に debug.js が出てくるのでクリック</li>
+                <li>console.log("クリック回数：" + count); にブレークポイントを貼る<br>(行番号をクリックして数字が青く選択されればOK)</li>
+                <li>下のボタンをクリックしてみましょう</li>
+                <li><button class="debug-button" type="button" onclick="clickEvent()">クリックしたらポップアップ表示をします。</button></li>
+                <li>Consoleに count と入力し、Enterキーを押しましょう</li>
+                <li>整数が表示されることを確認</li>
+                <li>処理をひとつ進めましょう</li>
+                <li>Consoleに クリック回数: X と表示されていることを確認しましょう</li>
+                <li>処理を最後まで進めましょう</li>
+                <li>ポップアップが出てくることを確認</li>
+            </ol>
+            <h2 class="sub-title">レイアウトの確認</h2>
+            <ol class="confirmation-list">
+                <li>画面上のどこかで右クリック</li>
+                <li>検証を選択</li>
+                <li>左上の矢印をクリック</li>
+                <li>その状態で各htmlタグ要素の上にカーソルを合わせてみよう</li>
+                <li>その状態で下の箱をクリック</li>
+                <li class="debug-box"></li>
+                <li>.debug-box の{}の中にcssの記載をしてみよう</li>
+                <li>border-style: solidのチェックを外す、background-color: #006400 を追記</li>
+                <li>枠線が無くなって、背景が緑になればOKです</li>
+            </ol>
+            <small>※カーソルを動かすごとに色々出てくるのが嫌な場合は始めに押した矢印をクリックすれば元に戻ります。</small>
+        </main>
+        <script src="./static/debug.js"></script>
+    </body>
+</html>

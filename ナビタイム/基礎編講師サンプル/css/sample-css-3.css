@@ -1,0 +1,15 @@
+.top {
+    width: 100px;
+    height: 100px;
+    background-color: lightblue;
+}
+.middle {
+    width: 50%;
+    height: 250px;
+    background-color: red;
+}
+.bottom {
+    width: calc(300px / 2);
+    height: 150px;
+    background-color: blue;
+}

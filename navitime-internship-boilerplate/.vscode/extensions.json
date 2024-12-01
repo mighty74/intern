@@ -1,0 +1,13 @@
+{
+    "recommendations": [
+        "ritwickdey.liveserver",
+        "formulahendry.auto-close-tag",
+        "formulahendry.auto-rename-tag",
+        "coenraads.bracket-pair-colorizer",
+        "zignd.html-css-class-completion",
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode",
+        "xabikos.javascriptsnippets",
+        "humao.rest-client"
+    ]
+}

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        #map {
+            width: 800px;
+            height: 450px;
+            background-color: black;
+        }
+
+        #route-search-button {
+            margin: 1rem;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios@0.27.2/dist/axios.min.js"></script>
+    <script
+        src="https://api-service.instruction.cld.dev.navitime.co.jp/beginner/v1/map_script?host=localhost:5500"></script>
+</head>
+
+<body>
+    <h1>ルート線表示 サンプルコード</h1>
+    <!-- ボタンを表示　-->
+    <button type="button" id="route-search-button">ナビタイムジャパン ⇔ 東京タワー のルート線を表示</button>
+
+    <!-- 地図領域 -->
+    <div id="map"></div>
+
+    <!-- 地図を表示するためのスクリプト -->
+    <script>
+        // インスタンス格納用オブジェクト
+        const state = {};
+        // ルート線を取得するためのurlを定義
+        const ROUTE_SHAPE_URL = 'https://api-service.instruction.cld.dev.navitime.co.jp/beginner/v1/shape_transit?start=35.658584,139.745457&goal=35.667395,139.714896&start_time=2020-09-04T09:00:00&options=transport_shape';
+
+        // 地図の描画
+        window.addEventListener('load', function () {
+            const center = new navitime.geo.LatLng('35.689614', '139.691634');
+            state.map = new navitime.geo.Map('map', center, 15);
+        });
+
+
+        /**
+         * ルート検索に成功した時に実行される関数。
+         */
+        function routeShapeSuccessHandler(response) {
+            console.log(response);
+            // GeoJSON形式のオブジェクトをデータから取得
+            const geojson = response.data;
+
+            const options = {
+                map: state.map,
+                unit: 'degree',
+                allRoute: true,
+                arrow: true,
+                originalColor: true
+            };
+
+            // ルート線オブジェクトを生成
+            /**
+             * ルート線オブジェクトを生成し、変数stateオブジェクトに格納する
+             * @see {@link https://api-sdk.navitime.co.jp/api/specs/tilescript_tutorial/jsdoc/symbols/navitime.geo.route.Renderer.html}
+             */
+            state.renderer = new navitime.geo.route.Renderer(geojson, options);
+            state.renderer.draw(); // ルートを地図上に描画する
+        }
+
+
+        /**
+         * ボタンがクリックされた時に第2引数で渡された関数を実行し、API通信する。
+         */
+        $('#route-search-button').on('click', function () {
+            axios.get(ROUTE_SHAPE_URL)
+                .then(routeShapeSuccessHandler)
+                .catch(function (error) {
+                    // ルート線が取得できなかった場合
+                    console.log('status code', error.status);
+                });
+        });
+    </script>
+</body>
+
+</html>
